@@ -46,7 +46,7 @@ internal class DotGenerator(
               .filter {
                 // TODO this is not optimal but will do for now.
                 val isCompileClassPath = it.name == "compileClasspath"
-                val isAndroidProjectClassPath = it.name == "debugCompileClasspath" || it.name == "releaseCompileClasspath"
+                val isAndroidProjectClassPath = it.name == "debugDevFlavorCompileClasspath" || "debugCompileClasspath" || it.name == "releaseCompileClasspath"
                 isCompileClassPath || isAndroidProjectClassPath
               }
               .flatMap { it.resolvedConfiguration.firstLevelModuleDependencies }
